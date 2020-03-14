@@ -1,0 +1,62 @@
+body {
+    background: #8E2DE2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+.upper{
+    padding: 20px;
+    margin: auto;
+    height: 90px;
+    text-align: center;
+    /* background: white; */
+    
+}
+
+#heading{
+   font-size: 40px;
+   font-family: 'Shrikhand', Helvetica, sans-serif;
+   font-style: bold;
+   /* text-decoration: underline; */
+   color: white;
+   
+
+}
+
+/* middle section --------------------------------------------------*/
+
+.mid-section{
+    padding: 20px;
+    margin: 10px auto;
+    height: 150px;
+    
+}
+
+#icons{
+    text-align: center;
+}
+
+#icons .far{
+    font-size: 55px;
+    color: white;
+    
+}
+
+#icons ul li {
+    display: inline-block;
+}
+
+.gamePieces {
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    
+}
+
+

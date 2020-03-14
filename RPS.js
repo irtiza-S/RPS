@@ -5,7 +5,7 @@ function computerPlay(lst){
     return randomitem;
 }
 
-// computerPlay(compChoice);
+
 let compTally = 0;
 let playerTally = 0;
 
@@ -65,7 +65,7 @@ function game(){
         console.log('Computer : ' + compTally, 'Player: ' + playerTally);
     }
     
-    x = (compTally > playerTally) ? 'Game over computer wins! ' : (compTally < playerTally) ? 'Congratulations you won! ' : 'It\'s a draw! ';
+    let x = (compTally > playerTally) ? 'Game over computer wins! ' : (compTally < playerTally) ? 'Congratulations you won! ' : 'It\'s a draw! ';
     console.log(x);
     return (x);
 }
