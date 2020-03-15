@@ -1,4 +1,6 @@
+/*utilities ------------------------------------------------------- */
 body {
+    height: 700px;
     background: #8E2DE2;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -10,21 +12,61 @@ a {
     text-decoration: none;
     color: black;
 }
+
+.typography{
+    font-family: 'Aclonica',Impact, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    padding: 15px;
+    color: white;
+}
+
+.typography2{
+    font-family: 'Nova Square', Impact, 'Arial Narrow Bold', sans-serif;
+    color: red;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.BTN {
+    margin: 0 auto;
+    text-align: center;
+    
+}
+
+/*header --------------------------------------------*/
 .upper{
     padding: 20px;
     margin: auto;
-    height: 90px;
+    height: 100px;
     text-align: center;
     /* background: white; */
     
 }
+
+#btn {
+    border: none;
+    border-radius: 7px;
+    position: relative;
+    top: 40px;
+    padding: 7px;
+    font-size: 1.2em;
+    background-color: white;
+    font-family: 'Aclonica', cursive;
+
+}
+
+#btn:hover{transition: 0.3s; background-color: silver; cursor: pointer;}
+#btn:active{background-color: grey;}
+#btn:focus{outline: none;}
 
 #heading{
    font-size: 40px;
    font-family: 'Shrikhand', Helvetica, sans-serif;
    font-style: bold;
    /* text-decoration: underline; */
-   color: white;
+   color: black;
    
 
 }
@@ -32,7 +74,7 @@ a {
 /* middle section --------------------------------------------------*/
 
 .mid-section{
-    padding: 20px;
+    padding: 0px 20px;
     margin: 10px auto;
     height: 150px;
     
@@ -42,8 +84,8 @@ a {
     text-align: center;
 }
 
-#icons .far{
-    font-size: 55px;
+#icons .fas{
+    font-size: 200px;
     color: white;
     
 }
@@ -55,8 +97,91 @@ a {
 .gamePieces {
     padding: 20px;
     border: 1px solid white;
-    border-radius: 50%;
+    outline: 2px solid black;
+    /* border-radius: 50%; */
+    box-shadow: 0 10px 15px 0 rgba(0,0,0,.5);
     
 }
 
+#icons ul li a .fas:hover{
+    color: black;
+    transition: 0.6s;
+    /* box-shadow: 0 5px 5px 0 rgba(0,0,0,.1); */
+}
 
+
+/*Scoreboard --------------------------------- */
+.scoreboard{
+    height: 300px;
+    border: 7px solid white;
+    /* outline: 3px solid black; */
+    border-radius: 15px;
+    margin: 120px auto 0px auto;
+    width: 650px;
+    /* display: grid; */
+    box-sizing: border-box;
+    background: black;
+    box-shadow: 0 20px 30px 0 rgba(0,0,0.5);
+}
+
+#computerScore{
+    float:left;
+    width: 50%;
+    border-bottom: 5px solid white;
+    border-right: 5px solid white;
+    
+    /* clear:left;     */
+    box-sizing: border-box;
+    height: 30%;
+    text-align:center;
+}
+
+#playerScore{
+    float: right;
+    width: 50%;
+    border-bottom: 5px solid white;
+    /* border-right: 5px solid white; */
+    box-sizing: border-box;
+    height: 30%;
+    text-align:center;
+}
+
+.box{
+    width: 50%;
+    border: 1px solid white;
+    height: 50%;
+    text-align: center;
+    padding: 5px;
+    border-bottom: 5px solid white;
+    font-size: 120px;
+}
+
+#comp{
+    float:left;
+    box-sizing: border-box;
+    border-right: 5px solid white;
+
+}
+
+#play{
+    float: right;
+    box-sizing: border-box;
+}
+
+.textBoard{
+    width: 100%;
+    text-align: center;
+    /* border: 5px solid ; */
+    color: white;
+    height: 20%;
+    float:right;
+    box-sizing: border-box;
+    padding: 20px;
+    /* background: red; */
+}
+
+.textBoard #text{
+    font-family: 'Aclonica', Impact, sans-serif;
+    font-size: 20px;
+    
+}
