@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="reset.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Aclonica|Shrikhand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Nova+Square&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/86326a2a1a.js" crossorigin="anonymous"></script>
+
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <header>
+        <div class='upper'><h1 id='heading'>Rock Paper Scissors</h1>
+            <div class='.BTN'><button id='reset'>Reset</button></div>
+        </div>
+        
+    </header>
+
+    <section class='mid-section'>
+        <div id='icons'>
+            <ul>
+                <li><div class='gamePieces'><a href="#"><i class='fas fa-hand-rock' id='rock'></i></a></li> 
+                <li><div class='gamePieces'><a href="#"><i class='fas fa-hand-paper' id='paper'></i></a></div></li>
+                <li><div class='gamePieces'><a href="#"><i class='fas fa-hand-scissors' id='scissors'></i></a></li>
+            </ul>
+        </div> 
+    </section>
+
+    <section class='scoreboard'>
+        <div id='computerScore'> 
+           <p id='COMPUTER' class='typography'>COMPUTER</p> 
+        </div>
+        <div id='playerScore'>
+            <p id='PLAYER' class='typography'>PLAYER</p>
+        </div>
+        <div id='comp' class='box'>
+            <p id='cScore' class='typography2'>0</p>
+        </div>
+        <div id='play' class='box'>
+            <p id='pScore' class='typography2'>0</p>
+        </div>
+        <div class='textBoard'>
+            <p id='text'>...</p>
+        </div>
+    </section>
+    
+    <script src='app.js'></script>
+    <!-- <script src='RPS.js'></script> -->
+</body>
+</html>
