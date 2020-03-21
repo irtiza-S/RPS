@@ -14,14 +14,14 @@ a {
 }
 
 .typography{
-    font-family: 'Aclonica',Impact, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Shrikhand', 'Aclonica', Impact, 'Arial Narrow Bold', sans-serif;
     font-size: 40px;
     padding: 15px;
     color: white;
 }
 
 .typography2{
-    font-family: 'Nova Square', Impact, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact,'Nova Square', Impact, 'Arial Narrow Bold', sans-serif;
     color: red;
 }
 
@@ -53,7 +53,7 @@ ul {
     padding: 7px;
     font-size: 1.2em;
     background-color: white;
-    font-family: 'Aclonica', cursive;
+    font-family: 'Shrikhand', 'Aclonica', cursive;
 
 }
 
@@ -181,7 +181,7 @@ ul {
 }
 
 .textBoard #text{
-    font-family: 'Aclonica', Impact, sans-serif;
+    font-family: 'Shrikhand', 'Aclonica', Impact, sans-serif;
     font-size: 20px;
     
 }
