@@ -1,233 +1,129 @@
-let gamePlaying = true;
+const scissors = document.querySelector('#scissors');
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const reset = document.querySelector('#reset'); 
+let cScore = document.querySelector('#cScore');
+let pScore = document.querySelector('#pScore');
+let textBoard = document.querySelector('#text');
+let playerSelection;
 let compTally = 0;
 let playerTally = 0;
+let compChoice = new Array('Rock', 'Paper', 'Scissors');
 let round = 0;
-let a, CS, PS;
 
-function compChoice(){
-    let compChoices = ['Rock', 'Paper', 'Scissors'];
-    return compChoices[Math.floor(Math.random() * compChoices.length)];
+function computerPlay(lst){
+    let randomitem = lst[Math.floor(Math.random()*lst.length)];
+    return randomitem;
 }
 
 
-function Game(){
-    if(gamePlaying){
-        
-        document.getElementById('rock').addEventListener('click', function(){ 
-        a = document.getElementById('rock').value = 'rock';
-        // document.getElementById('text').innerHTML = 'Computer picked: ' + cc;
-        outcomes();
-        round++;
+rock.addEventListener('click', function(){
+    playerSelection = rock.value = 'rock';
+    let computerSelection = computerPlay(compChoice);
+    cScore.innerHTML = compTally;
+    pScore.innerHTML = playerTally;
+    
+    if (playerSelection == 'rock' && computerSelection == 'Paper'){
+        textBoard.textContent = 'You lose! Paper wraps up rock!';
+        compTally += 1;
+        winner();
+
+    } else if(playerSelection == 'rock' && computerSelection == 'Scissors'){
+        textBoard.textContent = 'You win! Rock smashes scissors!';
+        playerTally += 1;
+        winner();
+
+    } else {
+        textBoard.textContent = 'It\'s a tie! ';
+        winner();
+
+    }
+
+    return playerTally, compTally;
+    
+});
+
+scissors.addEventListener('click', function(){
+    playerSelection = scissors.value = 'scissors';
+    let computerSelection = computerPlay(compChoice);
+    cScore.innerHTML = compTally;
+    pScore.innerHTML = playerTally;
+
+    if (playerSelection == 'scissors' && computerSelection == 'Rock'){
+        compTally += 1;
+        round += 1;
         console.log(round);
+        textBoard.textContent = 'You lose! Rock smashes scissors! ';
+        winner()
+        
 
-        return a, round;
-    })
+    } else if (playerSelection == 'scissors' && computerSelection == 'Paper'){
+        playerTally += 1;
+        round += 1;
+        console.log(round);
+        textBoard.textContent = 'You win! Scissors cuts up paper! ';
+        winner()      
+        
 
-        document.getElementById('scissors').addEventListener('click', function(){
-            a = document.getElementById('scissors').value = 'scissors';
-            // document.getElementById('text').innerHTML = 'Computer picked: ' + cc;
-            outcomes();
-            round++;
-            console.log(round);
+    } else {
+        textBoard.textContent = 'It\'s a tie';
+        round += 1;
+        console.log(round);
+        winner();
+        
+    }
 
-            return a, round;
-    })
+    return playerTally, compTally;
+});
 
-        document.getElementById('paper').addEventListener('click', function(){
-            a = document.getElementById('paper').value = 'paper';
-            // document.getElementById('text').innerHTML = 'Computer picked: ' + cc;
-            outcomes();
-            round++;
-            console.log(round);
+paper.addEventListener('click', function(){
+    playerSelection = paper.value = 'paper';
+    let computerSelection = computerPlay(compChoice);
+    cScore.innerHTML = compTally;
+    pScore.innerHTML = playerTally;
 
-            return a, round;
-    })
+    if (playerSelection == 'paper' && computerSelection == 'Scissors'){
+        textBoard.textContent = 'You lose! Scissors cuts up paper! ';
+        compTally += 1;
+        winner();
 
+    } else if (playerSelection == 'paper' && computerSelection == 'Rock'){
+        textBoard.textContent = 'You win! Paper wraps up rock! ';
+        playerTally += 1;
+        winner();
+
+    } else {
+        textBoard.textContent = 'It\'s a tie!';
+        winner();
+    }
+
+    return playerTally, compTally;
+
+});
+
+function winner(){
+    if (playerTally === 5){
+        textBoard.textContent = 'GAME OVER YOU WON!';
     
-    } //gamePlaying end curly brace
-    
-    } 
+    }
 
-    
+    else if (compTally === 5){
+        textBoard.textContent = 'GAME OVER YOU LOSE!';
+    }
 
-
-function outcomes(){
-    if (gamePlaying){
-        let cc = compChoice();
-        let b;
-        if (a == 'rock' && cc == 'Paper'){
-            compTally ++; 
-            round++;
-            document.getElementById('cScore').innerHTML = compTally;
-            CS = document.getElementById('cScore').value = compTally;
-            b = document.getElementById('text').innerHTML = 'Computer picked: Paper - You lose!';
-            
-        
-        } else if (a == 'rock' && cc == 'Scissors') {
-            playerTally++; 
-            round++;
-            document.getElementById('pScore').innerHTML = playerTally;
-            PS = document.getElementById('pScore').value = playerTally;
-            b = document.getElementById('text').innerHTML = 'Computer picked: Scissors - You win! ';
-            
-    
-        } else if (a == 'rock' && cc == 'Rock') {
-            round++;
-            b = document.getElementById('text').innerHTML = 'Computer picked: Rock - It\'s a tie!';
-            
-    
-        } else if(a == 'scissors' && cc == 'Rock'){
-            compTally ++; 
-            round++;
-            document.getElementById('cScore').innerHTML = compTally;
-            CS = document.getElementById('cScore').value = compTally;
-            b = document.getElementById('text').innerHTML = 'Computer picked Rock - You lose!';
-            
-        
-        } else if(a == 'scissors' && cc == 'Paper') {
-            playerTally++; 
-            round++;
-            document.getElementById('pScore').innerHTML = playerTally;
-            PS = document.getElementById('pScore').value = playerTally;
-            b = document.getElementById('text').innerHTML = 'Computer picked: Paper - You win!';
-            
-        
-        } else if (a == 'scissors' && cc == 'Scissors'){
-            round++;
-            b = document.getElementById('text').innerHTML = 'Computer picked: Scissors - It\'s a tie!';
-            
-        
-        } else if (a == 'paper' && cc == 'Scissors'){
-            compTally ++; 
-            round++;
-            document.getElementById('cScore').innerHTML = compTally;
-            CS = document.getElementById('cScore').value = compTally;
-            b = document.getElementById('text').innerHTML = 'Computer picked: Scissors - You lose!';
-            
-        
-        } else if (a == 'paper' && cc == 'Rock'){
-            playerTally++; 
-            round++;
-            document.getElementById('pScore').innerHTML = playerTally;
-            PS = document.getElementById('pScore').value = playerTally;
-            b = document.getElementById('text').innerHTML = 'Computer picked: Rock - You win!';
-            
-        
-        } else{
-            round++;
-            b = document.getElementById('text').innerHTML = 'Computer picked: Paper - It\'s a tie!';
-        
-        }
-        
-        if(round === 5){
-            if(playerTally === '5'){
-                document.getElementById('text').innerHTML = 'You won!';
-            }
-
-            else if(compTally === '5'){
-                document.getElementById('text').innerHTML = 'you lost';
-            }
-
-            
-        }
-        
-        
-        return PS, CS, round, compTally, playerTally;
-    } //gamePlaying end
-    
-    
-
-
+    else{
+        return false;
+    }
 }
 
-document.getElementById('reset').addEventListener('click', reset);
-
-function reset(){
+reset.addEventListener('click', function(){
+    cScore.textContent = '0';
+    pScore.textContent = '0';
     compTally = 0;
     playerTally = 0;
-    document.getElementById('pScore').innerHTML = compTally;
-    document.getElementById('cScore').innerHTML = playerTally;
-    document.getElementById('text').innerHTML = '...';
-    document.getElementById('rock').classList.add('fas')
-
-}
-
-
-// let winner = () => (PS > CS) ? document.getElementById('text').innerHTML = 'GAME OVER: You won!' : 'GAME OVER: You lost!';
-
-Game();
-
-
-//code for console Rock paper Scissors
-// let compChoice = new Array('Rock', 'Paper', 'Scissors');
-
-// function computerPlay(lst){
-//     let randomitem = lst[Math.floor(Math.random()*lst.length)];
-//     return randomitem;
-// }
-
-// let compTally = 0;
-// let playerTally = 0;
-
-// function playRound(playerSelection, computerSelection){
-//     var playerSelection;
-//     var computerSelection = computerPlay(compChoice);
-//     let ps = playerSelection.toLowerCase();
-//     console.log(playerSelection);
-//     console.log(computerSelection);
-    
-
-//     if (ps == 'rock' && computerSelection == 'Paper'){
-//         compTally += 1;
-//         console.log ('You lose! Paper wraps up rock!');
-
-//     } else if(ps == 'rock' && computerSelection == 'Scissors'){
-//         playerTally += 1;
-//         console.log ('You win! Rock smashes scissors!');
-
-//     } else if (ps == 'rock' && computerSelection == 'Rock'){
-//         console.log ('It\'s a tie! ');
-
-//     } else if (ps == 'paper' && computerSelection == 'Scissors'){
-//         compTally += 1;
-//         console.log('You lose! Scissors cuts up Paper! ');
-
-//     } else if (ps == 'paper' && computerSelection == 'Rock'){
-//         playerTally +=1;
-//         console.log('You win! Paper wraps up rock! ');
-
-//     } else if (ps == 'paper' && computerSelection == 'Paper'){
-//         console.log('It\'s a tie! ');
-
-//     } else if (ps == 'scissors' && computerSelection == 'Rock'){
-//         compTally += 1;
-//         console.log ('You lose! Rock smashes scissors! ');
-
-//     } else if (ps == 'scissors' && computerSelection == 'Paper'){
-//         playerTally += 1;
-//         console.log('You win! Scissors cuts up paper! ');
-
-//     } else {
-//         console.log('It\'s a tie');
-//     }
-
-//     return computerSelection, ps, playerTally, compTally;
-    
-// }
+    round = 0;
+    textBoard.textContent = '...';
+});
 
 
 
-
-// function game(){
-//     for (let i = 0; i < 5; i++){
-//         let usrInput = prompt('Enter rock, paper or scissors: ');
-//         playRound(usrInput, computerPlay);
-//         console.log('Computer : ' + compTally, 'Player: ' + playerTally);
-//     }
-    
-//     let x = (compTally > playerTally) ? 'Game over computer wins! ' : (compTally < playerTally) ? 'Congratulations you won! ' : 'It\'s a draw! ';
-//     console.log(x);
-//     return (x);
-// }
-
-// game();
