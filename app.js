@@ -35,7 +35,6 @@ function playRound(playerSelection) {
         message.textContent = 'computer has won that round!'
     }
 
-    console.log(`player score: ${playertally}, computer score: ${comptally}`)
     let roundWinner = endGame(playertally, comptally)
     if (roundWinner === 'a') {
         message.textContent = 'Player is the winner!'
