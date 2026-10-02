@@ -5,28 +5,20 @@ const reset = document.getElementById('reset')
 const message = document.getElementById('text')
 let computerScore = document.getElementById('cScore')
 let playerScore = document.getElementById('pScore')
-// var playerChoice = ''
 let comptally = 0
 let playertally = 0
 let gameOver = false
 
 
 reset.addEventListener('click', resetGame)
-
 rock.addEventListener('click', () => playRound('rock'))
-
 paper.addEventListener('click', () => playRound('paper'))
-
 scissors.addEventListener('click', () => playRound('scissors'))
 
 function playRound(playerSelection) {
     if (gameOver) return
     playerChoice = playerSelection
     let compChoice = getCompChoice()
-
-
-    console.log(`player choice: ${playerChoice}, computer choice: ${compChoice}`)
-
     let result = winner(playerChoice, compChoice)
     
     if (result === 'player') {
