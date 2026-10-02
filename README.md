@@ -1,6 +1,7 @@
 # Rock Paper Scissors
 
 A browser-based Rock Paper Scissors game built with HTML, CSS and vanilla JavaScript. Play against the computer, first to 5 wins.
+https://irtiza-s.github.io/RPS/
 
 ## Features
 
